@@ -1,0 +1,32 @@
+GET http://localhost:4000/api/v1/products HTTP/1.1
+
+### get by id
+GET http://localhost:4000/api/v1/products/6044080877f1cb14425623a2 HTTP/1.1
+
+### Creacion
+POST http://localhost:4000/api/v1/products HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "nuestro producto 1",
+  "price": 2500,
+  "sku": "dfsadf46465",
+  "stock": 10,
+  "description": "cualquier cosa",
+  "img": "http://url",
+  "productOwner": "604403599cc26711d205039c"
+}
+
+###update
+PUT http://localhost:4000/api/v1/products/6044080877f1cb14425623a2 HTTP/1.1
+Content-Type: application/json
+
+{
+  "nombre": "otro",
+  "apellido": "otro",
+  "edad": 18,
+  "email": "jhon@gmail.com"
+}
+
+### delete
+DELETE http://localhost:4000/api/v1/products/6044080877f1cb14425623a2 HTTP/1.1
