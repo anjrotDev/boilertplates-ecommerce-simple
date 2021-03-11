@@ -2,6 +2,7 @@ const { find, findById, create, update, erase } = require("../helpers/crud");
 const Model = require("../models/Users");
 
 exports.getAllData = async (req, res) => {
+  console.log("req.body :>> ", req.body);
   try {
     const data = await find(Model);
 

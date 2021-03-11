@@ -1,8 +1,9 @@
 const { encryptPassword, decryptPassword } = require("./encryptPass");
-const { createToken } = require("./jwt");
+const { createToken, verifyJwt } = require("./jwt");
 
 module.exports = {
   encryptPassword,
   createToken,
-  decryptPassword
+  decryptPassword,
+  verifyJwt
 };
