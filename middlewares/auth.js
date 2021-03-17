@@ -7,7 +7,7 @@ exports.verifyToken = async (req, res, next) => {
   try {
     const verify = verifyJwt(token);
 
-    const user = await UsersModels.findById(verify.id, { password: 0 });
+    const user = await UsersModels.findById(verify.id, { password: 0 }).populate("roles");
     if (!user) return res.status(401).send("User does not exists");
 
     req.body.user = user;
@@ -15,4 +15,10 @@ exports.verifyToken = async (req, res, next) => {
   } catch (error) {
     res.status(400).send(error.message);
   }
+};
+
+exports.authPermissions = async (req, res, next) => {
+  console.log("req.body :>> ", req.body.user);
+
+  next();
 };

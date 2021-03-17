@@ -5,7 +5,12 @@ const RolesSchema = new mongoose.Schema(
     name: {
       type: String,
       unique: true
-    }
+    },
+    permissions: [
+      {
+        type: String
+      }
+    ]
   },
   {
     timestamps: true,

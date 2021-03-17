@@ -18,14 +18,13 @@ Content-Type: application/json
 }
 
 ###update
-PUT http://localhost:4000/api/v1/products/6044080877f1cb14425623a2 HTTP/1.1
+PUT http://localhost:4000/api/v1/products/605147ca9fc2a21667565398 HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTAxNWM1MDZiOGQ1MTJlNTAwMzA0NSIsImlhdCI6MTYxNTk0ODI4NywiZXhwIjoxNjE2MDM0Njg3fQ.tCPeClliLOPCusJfKbo_0ckdKtejx0jlxZiYZ-Y84W0
 
 {
-  "nombre": "otro",
-  "apellido": "otro",
-  "edad": 18,
-  "email": "jhon@gmail.com"
+  "price": 2500,
+  "sku": "dfsadf46465" 
 }
 
 ### delete

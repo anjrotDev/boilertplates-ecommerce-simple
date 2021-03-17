@@ -1,7 +1,8 @@
 const { getRoles } = require("./roles");
-const { verifyToken } = require("./auth");
+const { verifyToken, authPermissions } = require("./auth");
 
 module.exports = {
   getRoles,
-  verifyToken
+  verifyToken,
+  authPermissions
 };
