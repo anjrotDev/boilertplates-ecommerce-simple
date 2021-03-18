@@ -1,5 +1,5 @@
 GET http://localhost:4000/api/v1/users HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNDU1NjAyN2E2ZDc2NTgxZThjZjUyOSIsImlhdCI6MTYxNTQyMjU1OSwiZXhwIjoxNjE1NTA4OTU5fQ.vjMRWgKnuwHaxpfdkx9LfLJ6RWyulz2S3fQwrVP0mg4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTE3MDg1NTFhNGRmNGM2MWM3YWViNSIsImlhdCI6MTYxNTk0OTk3MSwiZXhwIjoxNjE2MDM2MzcxfQ.blmWa9Agc0pg9RvYk7bMPJ4uKQnlLOiXxWe7gjVD8rM
 
 ### get by id
 GET http://localhost:4000/api/v1/users/604518a2e0792d275e8b3eff HTTP/1.1
@@ -10,10 +10,11 @@ POST http://localhost:4000/api/v1/auth/register HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "ultimo",
+  "name": "manager",
   "lastName": "none",
-  "email": "swoddfdffdfrd@gmail.com",
-  "password": "123456"
+  "email": "manager@gmail.com",
+  "password": "123456",
+  "roles": ["manager"]
 }
 
 ### Login
@@ -21,14 +22,14 @@ POST http://localhost:4000/api/v1/auth/login HTTP/1.1
 Content-Type: application/json
 
 {
-  "email": "swoddfdffdfrd@gmail.com",
+  "email": "manager@gmail.com",
   "password": "123456"
 }
 
 ###update
 PUT http://localhost:4000/api/v1/users/604518a2e0792d275e8b3eff HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTAxNWM1MDZiOGQ1MTJlNTAwMzA0NSIsImlhdCI6MTYxNTk0ODI4NywiZXhwIjoxNjE2MDM0Njg3fQ.tCPeClliLOPCusJfKbo_0ckdKtejx0jlxZiYZ-Y84W0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTE3MDg1NTFhNGRmNGM2MWM3YWViNSIsImlhdCI6MTYxNTk1MDEyMiwiZXhwIjoxNjE2MDM2NTIyfQ.nSCk0Y18eSQzofq3bfCMlvf8TpQXp6PBuZRpKkqbHQ8
 
 {
   "name": "ultimo",

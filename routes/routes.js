@@ -28,10 +28,10 @@ module.exports = () => {
   router.delete("/products/:id", verifyToken, ProductsControllers.deleteData);
 
   //roles Routes
-  router.get("/roles", verifyToken, RolesControllers.getAllData);
+  router.get("/roles", RolesControllers.getAllData);
   router.get("/roles/:id", verifyToken, RolesControllers.getDataById);
   router.put("/roles/:id", verifyToken, RolesControllers.updateData);
-  router.post("/roles", verifyToken, RolesControllers.createData);
+  router.post("/roles", RolesControllers.createData);
   router.delete("/roles/:id", verifyToken, RolesControllers.deleteData);
 
   return router;

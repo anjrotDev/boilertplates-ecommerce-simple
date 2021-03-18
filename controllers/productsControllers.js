@@ -23,6 +23,9 @@ exports.getDataById = async (req, res) => {
 };
 
 exports.createData = async (req, res) => {
+  const { _id } = req.body.user;
+  req.body.productOwner = _id;
+
   try {
     const data = await create(Model, req.body);
 

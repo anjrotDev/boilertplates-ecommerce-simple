@@ -6,6 +6,7 @@ GET http://localhost:4000/api/v1/products/6044080877f1cb14425623a2 HTTP/1.1
 ### Creacion
 POST http://localhost:4000/api/v1/products HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTE3MDg1NTFhNGRmNGM2MWM3YWViNSIsImlhdCI6MTYxNTk1MDEyMiwiZXhwIjoxNjE2MDM2NTIyfQ.nSCk0Y18eSQzofq3bfCMlvf8TpQXp6PBuZRpKkqbHQ8
 
 {
   "title": "nuestro producto 1",
@@ -13,14 +14,13 @@ Content-Type: application/json
   "sku": "dfsadf46465",
   "stock": 10,
   "description": "cualquier cosa",
-  "img": "http://url",
-  "productOwner": "604403599cc26711d205039c"
+  "img": "http://url"
 }
 
 ###update
-PUT http://localhost:4000/api/v1/products/605147ca9fc2a21667565398 HTTP/1.1
+PUT http://localhost:4000/api/v1/products/60516e7fe368174b3412b4a0 HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTAxNWM1MDZiOGQ1MTJlNTAwMzA0NSIsImlhdCI6MTYxNTk0ODI4NywiZXhwIjoxNjE2MDM0Njg3fQ.tCPeClliLOPCusJfKbo_0ckdKtejx0jlxZiYZ-Y84W0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTE2ZTI3ZTM2ODE3NGIzNDEyYjQ5ZiIsImlhdCI6MTYxNTk0OTUzNiwiZXhwIjoxNjE2MDM1OTM2fQ.jWS3wF_O6no3VsBaLNXRJnVvlJiQuhaOFSK-ICFaAFg
 
 {
   "price": 2500,
