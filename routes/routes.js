@@ -15,17 +15,17 @@ module.exports = () => {
   router.post("/auth/login", AuthControllers.login);
 
   //Users Routes
-  router.get("/users", verifyToken, UsersControllers.getAllData);
-  router.get("/users/:id", verifyToken, UsersControllers.getDataById);
-  router.put("/users/:id", verifyToken, UsersControllers.updateData);
-  router.delete("/users/:id", verifyToken, UsersControllers.deleteData);
+  router.get("/users", verifyToken, authPermissions, UsersControllers.getAllData);
+  router.get("/users/:id", verifyToken, authPermissions, UsersControllers.getDataById);
+  router.put("/users/:id", verifyToken, authPermissions, UsersControllers.updateData);
+  router.delete("/users/:id", verifyToken, authPermissions, UsersControllers.deleteData);
 
   //Products Routes
   router.get("/products", ProductsControllers.getAllData);
   router.get("/products/:id", ProductsControllers.getDataById);
   router.put("/products/:id", verifyToken, authPermissions, ProductsControllers.updateData);
-  router.post("/products", verifyToken, ProductsControllers.createData);
-  router.delete("/products/:id", verifyToken, ProductsControllers.deleteData);
+  router.post("/products", verifyToken, authPermissions, ProductsControllers.createData);
+  router.delete("/products/:id", verifyToken, authPermissions, ProductsControllers.deleteData);
 
   //roles Routes
   router.get("/roles", RolesControllers.getAllData);

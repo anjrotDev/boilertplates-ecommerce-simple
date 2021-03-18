@@ -1,4 +1,4 @@
-const { verifyJwt } = require("../helpers");
+const { verifyJwt, permissions } = require("../helpers");
 const UsersModels = require("../models/Users");
 
 exports.verifyToken = async (req, res, next) => {
@@ -18,7 +18,30 @@ exports.verifyToken = async (req, res, next) => {
 };
 
 exports.authPermissions = async (req, res, next) => {
-  console.log("req.body :>> ", req.body.user);
+  const { roles } = req.body.user;
+  const { method, path } = req;
+
+  const scope = path.split("/");
+
+  const findPermissions = permissions.find(x => x.method === method);
+
+  const methodPermissions = [...findPermissions.permissions, `${scope[1]}_${findPermissions.scope}`];
+
+  console.log("req.body :>> ", methodPermissions);
+
+  const getPermissions = roles.map(x => x.permissions);
+  console.log("getPermissions :>> ", getPermissions);
+
+  let count = 0;
+  for (const assignPermissions of getPermissions) {
+    for (const compare of methodPermissions) {
+      if (assignPermissions.includes(compare)) {
+        count++;
+      }
+    }
+  }
+
+  if (count === 0) return res.status(401).send("unauthorized!!");
 
   next();
 };
