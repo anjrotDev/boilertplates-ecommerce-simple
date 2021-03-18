@@ -18,7 +18,7 @@ exports.verifyToken = async (req, res, next) => {
 };
 
 exports.authPermissions = async (req, res, next) => {
-  const { roles } = req.body.user;
+  const { roles, permissions: perms } = req.body.user;
   const { method, path } = req;
 
   const scope = path.split("/");
@@ -29,7 +29,7 @@ exports.authPermissions = async (req, res, next) => {
 
   console.log("req.body :>> ", methodPermissions);
 
-  const getPermissions = roles.map(x => x.permissions);
+  const getPermissions = perms && perms.length !== 0 ? [perms] : roles.map(x => x.permissions);
   console.log("getPermissions :>> ", getPermissions);
 
   let count = 0;
