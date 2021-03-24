@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getRoles, verifyToken, authPermissions } = require("../middlewares");
+const { getRoles, verifyToken, authPermissions, isOwner } = require("../middlewares");
 
 const UsersControllers = require("../controllers/usersControllers");
 const ProductsControllers = require("../controllers/productsControllers");
@@ -23,7 +23,7 @@ module.exports = () => {
   //Products Routes
   router.get("/products", ProductsControllers.getAllData);
   router.get("/products/:id", ProductsControllers.getDataById);
-  router.put("/products/:id", verifyToken, authPermissions, ProductsControllers.updateData);
+  router.put("/products/:id", verifyToken, isOwner, authPermissions, ProductsControllers.updateData);
   router.post("/products", verifyToken, authPermissions, ProductsControllers.createData);
   router.delete("/products/:id", verifyToken, authPermissions, ProductsControllers.deleteData);
 
