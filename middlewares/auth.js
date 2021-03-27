@@ -73,6 +73,13 @@ exports.isOwner = async (req, res, next) => {
         }
       }
 
+      if (scope[1] === "users") {
+        if (id === scope[2]) {
+          req.body.user.isOwner = true;
+          return next();
+        }
+      }
+
     default:
       break;
   }

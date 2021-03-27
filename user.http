@@ -1,5 +1,5 @@
 GET http://localhost:4000/api/v1/users HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTE3MDg1NTFhNGRmNGM2MWM3YWViNSIsImlhdCI6MTYxNjAzNDc5OCwiZXhwIjoxNjE2MTIxMTk4fQ.vrtEjG61NbpZIHkHJd75PiU14x_Fm7zaDUPJQ4erJBM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTE3MDc1NTFhNGRmNGM2MWM3YWViNCIsImlhdCI6MTYxNjgxMDA2NSwiZXhwIjoxNjE2ODk2NDY1fQ.wzUF4-A_VAzRFA3PuHRyBIXz8C8EAHDvgD9otAI9uq8
 
 ### get by id
 GET http://localhost:4000/api/v1/users/604518a2e0792d275e8b3eff HTTP/1.1
@@ -10,11 +10,11 @@ POST http://localhost:4000/api/v1/auth/register HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "manager",
+  "name": "Usuario borrar",
   "lastName": "none",
-  "email": "manager@gmail.com",
+  "email": "Usuario borrar@gmail.com",
   "password": "123456",
-  "roles": ["manager"]
+  "roles": ["user"]
 }
 
 ### Login
@@ -22,19 +22,21 @@ POST http://localhost:4000/api/v1/auth/login HTTP/1.1
 Content-Type: application/json
 
 {
-  "email": "manager@gmail.com",
+  "email": "admin@gmail.com",
   "password": "123456"
 }
 
 ###update
-PUT http://localhost:4000/api/v1/users/6051708551a4df4c61c7aeb5 HTTP/1.1
+PUT http://localhost:4000/api/v1/users/605e9088bc58da8f792b672c HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTE3MDg1NTFhNGRmNGM2MWM3YWViNSIsImlhdCI6MTYxNjAzNDc5OCwiZXhwIjoxNjE2MTIxMTk4fQ.vrtEjG61NbpZIHkHJd75PiU14x_Fm7zaDUPJQ4erJBM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNWU5MDg4YmM1OGRhOGY3OTJiNjcyYyIsImlhdCI6MTYxNjgxMDEyMCwiZXhwIjoxNjE2ODk2NTIwfQ.oMA6qhapOi7sKzSCJ5y8P4IQAVwbIDe1-TcsWFkDzpU
 
 {
-  "permissions": ["products_read", "products_update", "products_write", "users_read"]
+  "name": "actualizado desde is owner"
 }
 
 ### delete
-DELETE http://localhost:4000/api/v1/users/604518a2e0792d275e8b3eff HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNDU1NjAyN2E2ZDc2NTgxZThjZjUyOSIsImlhdCI6MTYxNTQyMjU1OSwiZXhwIjoxNjE1NTA4OTU5fQ.vjMRWgKnuwHaxpfdkx9LfLJ6RWyulz2S3fQwrVP0mg4
+DELETE http://localhost:4000/api/v1/users/605e9088bc58da8f792b672c HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNWU5MDg4YmM1OGRhOGY3OTJiNjcyYyIsImlhdCI6MTYxNjgxMDEyMCwiZXhwIjoxNjE2ODk2NTIwfQ.oMA6qhapOi7sKzSCJ5y8P4IQAVwbIDe1-TcsWFkDzpU
+
+## eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNWU5MDg4YmM1OGRhOGY3OTJiNjcyYyIsImlhdCI6MTYxNjgxMDEyMCwiZXhwIjoxNjE2ODk2NTIwfQ.oMA6qhapOi7sKzSCJ5y8P4IQAVwbIDe1-TcsWFkDzpU
