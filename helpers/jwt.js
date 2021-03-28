@@ -1,5 +1,8 @@
 const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
-exports.createToken = id => jwt.sign({ id }, "claveSecreta", { expiresIn: "1 day" });
+const secrect = process.env.SECRECT_JWT;
 
-exports.verifyJwt = token => jwt.verify(token, "claveSecreta");
+exports.createToken = id => jwt.sign({ id }, secrect, { expiresIn: "1 day" });
+
+exports.verifyJwt = token => jwt.verify(token, secrect);
