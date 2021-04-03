@@ -13,8 +13,7 @@ Content-Type: application/json
   "name": "Usuario borrar",
   "lastName": "none",
   "email": "Usuario borrar@gmail.com",
-  "password": "123456",
-  "roles": ["user"]
+  "password": "123456"
 }
 
 ### Login

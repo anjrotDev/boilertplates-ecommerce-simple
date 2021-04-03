@@ -1,6 +1,12 @@
 const { find, findById, create, update, erase } = require("../helpers/crud");
 const Model = require("../models/Products");
 
+/**
+ * Get all data Controller
+ * @param {Object} req - HTTP req
+ * @param {Object} res - HTTP res
+ * @returns {Object} Products Found!!
+ */
 exports.getAllData = async (req, res) => {
   try {
     const data = await find(Model);
@@ -11,6 +17,12 @@ exports.getAllData = async (req, res) => {
   }
 };
 
+/**
+ * Get data by ID
+ * @param {Object} req - HTTP req
+ * @param {Object} res - HTTP res
+ * @returns {Object} Product Found
+ */
 exports.getDataById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -22,6 +34,12 @@ exports.getDataById = async (req, res) => {
   }
 };
 
+/**
+ * Create a product controller
+ * @param {Object} req - HTTP req
+ * @param {Object} res - HTTP res
+ * @returns {Object} Product created
+ */
 exports.createData = async (req, res) => {
   const { _id } = req.body.user;
   req.body.productOwner = _id;
@@ -35,6 +53,12 @@ exports.createData = async (req, res) => {
   }
 };
 
+/**
+ * Update Product controller
+ * @param {Object} req - HTTP req
+ * @param {Object} res - HTTP res
+ * @returns {Object} Product Updated
+ */
 exports.updateData = async (req, res) => {
   try {
     const { id } = req.params;
@@ -46,6 +70,12 @@ exports.updateData = async (req, res) => {
   }
 };
 
+/**
+ * Get data by ID
+ * @param {Object} req - HTTP req
+ * @param {Object} res - HTTP res
+ * @returns {String} Message
+ */
 exports.deleteData = async (req, res) => {
   try {
     const { id } = req.params;
